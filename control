@@ -1,0 +1,9 @@
+Package: com.rango.quizlite
+Name: QuizLife
+Depends: mobilesubstrate
+Version: 1.0
+Architecture: iphoneos-arm
+Description: A simple Tweak that enables all premium privileges in the Quizlet App from the Appstore.
+Maintainer: Rango
+Author: Rango
+Section: Tweaks
