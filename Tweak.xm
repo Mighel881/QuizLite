@@ -1,12 +1,18 @@
 %hook QuizletDefaultFeatureGateService
 - (bool)canUseNightTheme {
-    return 1;
+    return TRUE;
 } 
 - (bool)canUsePremiumThemes {
-    return 1;
+    return TRUE;
 } 
 - (bool)isNightThemeFeatureEnabled {
-    return 1;
+    return TRUE;
+} 
+- (bool)canSeePremiumThemes {
+    return TRUE;
+} 
+- (bool)isProductFreeTrial7Days {
+   return TRUE;
 } 
 %end
 
@@ -16,34 +22,23 @@
 } 
 %end
 
-%hook QuizletDefaultFeatureGateService
-- (bool)canSeePremiumThemes {
-    return 1;
-} 
-%end
+
 
 %hook FIRAInAppPurchaseItem
 - (bool)isFreeTrial {
     return 0;
 } 
-%end
-
-%hook FIRAInAppPurchaseItem
 - (void)setFreeTrial:(bool)arg1 {
-    arg1 = 0;
+    arg1 = FALSE;
     %orig;
 } 
 %end
 
-%hook QuizletDefaultFeatureGateService
-- (bool)isProductFreeTrial7Days {
-    return 1;
-} 
-%end
+
 
 %hook QuizletApptimizeFeatureFlagService
 + (bool)isPermanentAdsFreeUser {
-    return 1;
+    return TRUE;
 } 
 %end
 
@@ -51,26 +46,15 @@
 - (bool)shouldSaveSetsForOfflineUse {
     return %orig;
 } 
-%end
 
-%hook QuizletDefaultFeatureGateService
 - (bool)shouldShowOfflineFeature {
     return 1;
 } 
-%end
 
-%hook QuizletDefaultFeatureGateService
 - (bool)shouldShowOfflineFeatureWithSet:(id)arg1 {
     return %orig;
 } 
-%end
 
-%hook QuizletDefaultFeatureGateService
-- (bool)offlineFeatureCanShowOneSet {
-} 
-%end
-
-%hook QuizletDefaultFeatureGateService
 - (bool)canEnableOfflineFeature {
     return 1;
 } 

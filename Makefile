@@ -1,6 +1,6 @@
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = QuizLife
+TWEAK_NAME = QuizLite
 QuizLife_FILES = Tweak.xm
 
 include $(THEOS_MAKE_PATH)/tweak.mk
